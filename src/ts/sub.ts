@@ -3,7 +3,7 @@ import 'jquery.cookie'
 
 $(() => {
   // cookie hoge をセット
-  $.cookie('hoge', 'updated hoge content', {
+  $.cookie('hoge', 'updated_hoge_content', {
     domain: window.location.hostname,
     path: '/'
   })
