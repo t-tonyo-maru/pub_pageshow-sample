@@ -1,0 +1,20 @@
+extends ../_base/_layout
+block append vars
+  - var path = '../';
+  - var title = 'sub';
+block title
+  title= 'sub site title' + ' | ' + title
+block append meta
+block append link
+  link(rel="stylesheet" href=`${path}assets/css/sub.css`)
+block body
+  #wrapper.ly_wrapper
+    include ../_parts/_header
+    main.ly_main
+      p.el_text ↓cookie: hogeの内容
+      p.js-show-cookie.el_text
+      hr
+      p.el_text 10秒後にwindow.history.back()が発火して、ブラウザバックします
+    include ../_parts/_footer
+block append script
+  script(src=`${path}assets/js/sub.js`)
