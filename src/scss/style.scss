@@ -37,8 +37,9 @@
 -------------------- */
 
 // element
-@use './module/element/btn' as *;
 @use './module/element/banner' as *;
+@use './module/element/btn' as *;
+@use './module/element/text' as *;
 
 // block
 @use './module/block/card' as *;
