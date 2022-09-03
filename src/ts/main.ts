@@ -1,10 +1,20 @@
-// import { createPadZero } from './module/zeroPadding/zeroPadding'
+import $ from 'jquery'
+import 'jquery.cookie'
 
-window.onload = () => {
-  console.log('hello!! world!!')
+$(() => {
+  $('.js-button').on('click', () => {
+    // cookie hoge をセット
+    $.cookie('hoge', 'hoge_content', {
+      domain: window.location.hostname,
+      path: '/'
+    })
+  })
+  // cookie を表示
+  const cookieHoge = $.cookie('hoge') ? $.cookie('hoge') : ''
+  $('.js-show-cookie').text(`${cookieHoge}`)
+})
 
-  // 開発と本番のどちらの環境かを取得
-  console.log(process.env.NODE_ENV) // development || production
-  // 環境変数を取得
-  console.log(process.env.APP_URL)
-}
+window.addEventListener('pageshow', () => {
+  const cookieHoge = $.cookie('hoge') ? $.cookie('hoge') : ''
+  console.log('cookie: hoge', cookieHoge)
+})

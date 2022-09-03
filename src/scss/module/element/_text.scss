@@ -1,0 +1,6 @@
+// @use '../../foundation/variable/color' as *;
+@use '../../foundation/function/rem' as *;
+
+.el_text {
+  font-size: rem(16);
+}
