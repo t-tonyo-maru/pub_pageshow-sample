@@ -17,7 +17,6 @@
 @use './foundation/mixin/media-query-with-tab' as *;
 // @use './foundation/mixin/media-query' as *;
 @use './foundation/mixin/browsers' as *;
-@use './foundation/mixin/set-font-face' as *;
 
 /* --------------------
       base
@@ -49,7 +48,6 @@
 @use './module/block/headerCont' as *;
 @use './module/block/footerCont' as *;
 @use './module/block/fixBanner' as *;
-@use './module/block/hero' as *;
 
 /* --------------------
       unique
@@ -66,37 +64,3 @@
 @use './helper/clearfix' as *;
 @use './helper/margin' as *;
 @use './helper/padding' as *;
-
-/* --------------------
-      node_moduels
--------------------- */
-@use '../../node_modules/keen-slider/keen-slider' as *;
-
-
-/* --------------------
-      font-face
--------------------- */
-$fontFaces : 
-  (name: "Noto Sans JP", path: '../fonts/notosansjp/NotoSansJP-Thin',    weight:100, style: normal, exts: woff2 woff ),
-  (name: "Noto Sans JP", path: '../fonts/notosansjp/NotoSansJP-Light',   weight:300, style: normal, exts: woff2 woff ),
-  (name: "Noto Sans JP", path: '../fonts/notosansjp/NotoSansJP-Regular', weight:400, style: normal, exts: woff2 woff ),
-  (name: "Noto Sans JP", path: '../fonts/notosansjp/NotoSansJP-Medium',  weight:500, style: normal, exts: woff2 woff ),
-  (name: "Noto Sans JP", path: '../fonts/notosansjp/NotoSansJP-Bold',    weight:700, style: normal, exts: woff2 woff ),
-  (name: "Noto Sans JP", path: '../fonts/notosansjp/NotoSansJP-Black',   weight:900, style: normal, exts: woff2 woff );
-
-@each $fontFace in $fontFaces {
-  @include set-font-face(
-    map-get($fontFace, 'name'),
-    map-get($fontFace, 'path'),
-    map-get($fontFace, 'weight'),
-    map-get($fontFace, 'style'),
-    map-get($fontFace, 'exts')
-  );
-}
-
-.set-notosans {
-  font-family: $fontNotoSansJp;
-}
-.set-min {
-  font-family: serif;
-}

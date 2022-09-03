@@ -11,7 +11,7 @@ module.exports = (env, args) => {
     target: ['browserslist'],
     entry: {
       main: `./src/ts/main.ts`,
-      sample: `./src/ts/sample.ts`
+      sub: `./src/ts/sub.ts`
     },
     output: {
       filename: '[name].js',
